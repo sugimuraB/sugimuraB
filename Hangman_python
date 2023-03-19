@@ -1,0 +1,35 @@
+from random import choice
+
+paises_sulamericanos = ('ARGENTINA', 'BRASIL', 'COLOMBIA', 'CHILE', 'VENEZUELA', 'BOLIVIA', 'PERU', 'URUGUAI', 'EQUADOR', 'PARAGUAI')
+word = choice(paises_sulamericanos).upper()
+tries = 5
+letters = []
+done = False
+
+print('_ ' * len(word))
+print(f'É um País sulamericano de {len(word)} letras. \n')
+
+while not done is True:
+    left = 0
+    for guesses in word:
+        if guesses in letters:
+            print(guesses, end=' ')
+        else:
+            print('_', end=' ')
+            left += 1
+    print('')
+
+    if left == 0:
+        print('')
+        print('Parabéns! Você venceu.')
+        break
+
+    guesses = input(f'Tentativas restantes: {tries}. Digite uma letra: ').upper()
+    letters += guesses
+
+    if guesses not in word:
+        tries -= 1
+        print(f'Não existe {guesses} na palavra. \n')
+        if tries == 0:
+            print('Sinto Muito! Você perdeu.')
+            break
