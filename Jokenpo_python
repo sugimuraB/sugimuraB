@@ -1,0 +1,69 @@
+from random import randint
+import time
+
+escolha = ('PEDRA', 'PAPEL', 'TESOURA')
+computer = randint(0,2)
+
+print('''Opções: 
+[0] = PEDRA
+[1] = PAPEL
+[2] = TESOURA
+''')
+
+player = int(input('Qual sua escolha? '))
+print('-='*22)
+time.sleep(0.7)
+print('JO')
+time.sleep(0.7)
+print('KEN')
+time.sleep(0.7)
+print('PO')
+time.sleep(0.7)
+print('-='*22)
+time.sleep(0.7)
+
+if computer == 0:
+    if player == 0:
+        print(f'Você tirou {escolha[player]}. Computador tirou {escolha[computer]}.')
+        print('EMPATOU!!!')
+        print('-=' * 22)
+    elif player == 1:
+        print(f'Você tirou {escolha[player]}. Computador tirou {escolha[computer]}.')
+        print('Você VENCEU!!!')
+        print('-=' * 22)
+    elif player == 2:
+        print(f'Você tirou {escolha[player]}. Computador tirou {escolha[computer]}.')
+        print('Você PERDEU!!!')
+        print('-=' * 22)
+
+if computer == 1:
+    if player == 0:
+        print(f'Você tirou {escolha[player]}. Computador tirou {escolha[computer]}.')
+        print('Você PERDEU!!!')
+        print('-=' * 22)
+    elif player == 1:
+        print(f'Você tirou {escolha[player]}. Computador tirou {escolha[computer]}.')
+        print('EMPATOU!!!')
+        print('-=' * 22)
+    elif player == 2:
+        print(f'Você tirou {escolha[player]}. Computador tirou {escolha[computer]}.')
+        print('Você VENCEU!!!')
+        print('-=' * 22)
+
+if computer == 2:
+    if player == 0:
+        print(f'Você tirou {escolha[player]}. Computador tirou {escolha[computer]}.')
+        print('Você VENCEU!!!')
+        print('-=' * 22)
+    elif player == 1:
+        print(f'Você tirou {escolha[player]}. Computador tirou {escolha[computer]}.')
+        print('Você PERDEU!!!')
+        print('-=' * 22)
+    elif player == 2:
+        print(f'Você tirou {escolha[player]}. Computador tirou {escolha[computer]}.')
+        print('EMPATOU!!!')
+        print('-=' * 22)
+
+if player not in (0, 1, 2):
+    print('Opção Inválida! Escolha entre 0, 1 e 2.')
+    print('-=' * 22)
