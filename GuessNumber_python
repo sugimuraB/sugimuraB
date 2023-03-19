@@ -1,0 +1,34 @@
+from random import randint
+
+computer = randint(0, 10)
+palpite = 0
+tentativas = 3
+chutes = 1
+
+while palpite != computer:
+    palpite = int(input('Escolha um número entre 1 e 10: '))
+    print('')
+
+    if palpite == computer:
+        print('Parabéns, você acertou!!!')
+        print(f'Você acertou com {chutes} tentativas.')
+        break
+    elif palpite > 10:
+        tentativas -= 1
+        chutes += 1
+        print('Número inválido, tente somente números entre 1 e 10.')
+        print(f'Você tem mais {tentativas} tentativas. \n')
+    elif palpite < computer:
+        tentativas -= 1
+        chutes += 1
+        print('Seu palpite foi menor. Tente um número maior!')
+        print(f'Você tem mais {tentativas} tentativas. \n')
+    elif palpite > computer:
+        tentativas -= 1
+        chutes += 1
+        print('Seu palpite foi maior. Tente um número menor!')
+        print(f'Você tem mais {tentativas} tentativas. \n')
+
+    if tentativas == 0:
+        print('Acabaram as tentativas. Fim de Jogo!!!')
+        break
